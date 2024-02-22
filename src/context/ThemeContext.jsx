@@ -1,8 +1,25 @@
-import { createContext } from "react";
+"use client"
 
+import React, { createContext, useState } from "react";
 
-export default ThemeContext = createContext();
+export const ThemeContext = createContext();
+
+const getFormLocalStorage = () => {
+
+    if( typeof window !== undefined) {
+        const value = localStorage.getItem("theme");    
+        return value || 'light';
+    }
+}
+
 
 export const ThemeContextProvider = ({ children }) => {
-    return <ThemeContextProvider>{ children } </ThemeContextProvider>
-}
+
+    // const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState(() => {
+        return getFormLocalStorage();
+    });
+
+    return  <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
+
+};
