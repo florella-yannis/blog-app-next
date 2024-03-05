@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^1.5.0",
+    "@prisma/client": "^5.10.2",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@types/node": "20.11.24",
-    "@types/react": "18.2.63"
+    "@types/react": "18.2.63",
+    "prisma": "^5.10.2"
   }
 }
